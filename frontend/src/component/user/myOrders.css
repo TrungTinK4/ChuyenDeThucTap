@@ -1,0 +1,73 @@
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.productListContainer {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fdfcfc; /* Nền tổng thể nhạt */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#productListHeading {
+  text-align: center;
+  font: 400 1.2vmax "Roboto";
+  color: #ffffff;
+  padding: 0.5vmax;
+  background-color: #2c3e50; /* Màu tối cho tiêu đề */
+  margin-bottom: 1.5rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.productListTable .MuiDataGrid-columnHeaders {
+  background-color: #2c3e50; /* Màu nền cho header của bảng */
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.1vmax;
+}
+
+.productListTable .MuiDataGrid-columnHeader {
+  padding: 1vmax !important;
+  color: #ffffff;
+  font: 300 1.1vmax "Roboto" !important;
+}
+
+.productListTable .MuiDataGrid-iconSeparator {
+  display: none !important; /* Loại bỏ thanh chia cột */
+}
+
+.productListTable .MuiDataGrid-cell {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+}
+
+.productListTable .MuiDataGrid-cell--textLeft {
+  text-align: left;
+}
+
+.actions a, .actions button {
+  color: #4a90e2; /* Màu xanh nhẹ cho biểu tượng */
+}
+
+.actions a:hover, .actions button:hover {
+  color: #2b6cb0; /* Màu xanh đậm khi hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  #productListHeading {
+    font: 400 2.2vmax "Roboto";
+    padding: 4vw;
+  }
+  .productListTable .MuiDataGrid-columnHeader {
+    padding: 20px !important;
+    font-size: 1.5rem !important;
+  }
+}

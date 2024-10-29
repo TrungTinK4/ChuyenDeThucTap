@@ -1,0 +1,66 @@
+.productGridContainer {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#productGridHeading {
+  font: 500 2rem "Roboto";
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột với kích thước bằng nhau */
+  gap: 1rem; /* Khoảng cách giữa các ô */
+  width: 100%;
+}
+
+.gridItem {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+}
+
+.gridItem.header {
+  background-color: #2c3e50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actions a, .actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2980b9;
+  font-size: 1.2rem;
+}
+
+.actions a:hover, .actions button:hover {
+  color: #27ae60;
+}
+
+@media screen and (max-width: 768px) {
+  .gridContainer {
+      grid-template-columns: repeat(2, 1fr); /* Chia lại thành 2 cột khi màn hình nhỏ */
+  }
+  .gridItem {
+      font-size: 0.9rem;
+  }
+}

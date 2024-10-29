@@ -1,0 +1,286 @@
+.Header {
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;  /* Hiệu ứng chuyển đổi mềm mượt */
+}
+
+.Header.small {
+  padding: 5px 10px;  /* Thu gọn padding khi cuộn xuống */
+}
+
+.Header__announcement {
+  background-color: #0076d6;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.logoImage {
+  width: 150px;  /* Kích thước logo2 ban đầu */
+  height: auto;
+  object-fit: contain;
+  transition: width 0.3s ease, padding 0.3s ease;  /* Hiệu ứng thu nhỏ logo2 khi cuộn */
+}
+
+.Header.small .logoImage {
+  width: 100px;  /* Thu nhỏ logo2 khi cuộn xuống */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 70px;  /* Padding ban đầu của navbar */
+  align-items: center;
+  transition: padding 0.3s ease;  /* Hiệu ứng khi thay đổi padding */
+}
+
+.Header.small .navbar {
+  padding: 5px 20px;  /* Giảm padding khi cuộn xuống */
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navList li {
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover cho các mục menu */
+.navList li:hover {
+  background-color: #f0f0f0;
+  color: #0076d6;  /* Thay đổi màu chữ khi hover */
+}
+
+/* Mục menu đang active (được chọn) */
+.navList li.active a {
+  background-color: #0076d6;
+  color: white;  /* Màu chữ khi mục được chọn */
+  border-radius: 4px;  /* Làm mềm góc */
+}
+
+/* Khi nhấn vào mục menu */
+.navList li:active a {
+  background-color: #005bb5;  /* Màu nền khi nhấn vào */
+  color: white;
+}
+
+.rightOption {
+  display: flex;
+  align-items: center;
+}
+
+.iconLink {
+  margin: 0 10px;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarOptions {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 200px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.LogOutBtn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.LogOutBtn:hover {
+  background-color: #c0392b;
+}
+
+/* Điều chỉnh phần banner khi cuộn */
+.Header.small .logoImage {
+  width: 100px;  /* Thu nhỏ logo2 khi cuộn xuống */
+}
+
+.Header.small .navbar {
+  padding: 5px 20px;  /* Giảm chiều dọc của thanh navbar khi cuộn */
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 220px;  /* Tăng chiều rộng tối thiểu để vừa với nội dung */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Đổ bóng nhẹ để làm nổi bật menu */
+  z-index: 1;
+  border-radius: 8px;  /* Làm mềm các góc của menu */
+  padding: 10px 0;  /* Thêm khoảng trống giữa các mục menu */
+  top: 50px;  /* Đặt menu cách avatar */
+  right: 0;  /* Căn phải menu */
+}
+
+/* Hiển thị menu khi người dùng hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Các mục trong menu dropdown */
+.dropdown-content a {
+  display: flex;
+  align-items: center;  /* Căn chỉnh icon và text theo hàng ngang */
+  padding: 10px 15px;  /* Thêm khoảng cách giữa các mục */
+  text-decoration: none;
+  color: #333;  /* Màu chữ tối hơn */
+  font-size: 14px;  /* Thu nhỏ font chữ */
+  transition: background-color 0.3s ease;  /* Hiệu ứng khi hover */
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;  /* Thay đổi màu nền khi hover */
+}
+
+/* Icon trong dropdown */
+.dropdown-content a svg {
+  margin-right: 10px;  /* Khoảng cách giữa icon và text */
+  color: #6a5acd;  /* Màu icon đồng bộ */
+  font-size: 18px;  /* Kích thước icon */
+}
+
+/* Nút Đăng xuất */
+.LogOutBtn {
+  background-color: #e74c3c;  /* Màu đỏ cho nút đăng xuất */
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0 0 8px 8px;  /* Làm mềm góc dưới của nút */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.LogOutBtn svg {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.LogOutBtn:hover {
+  background-color: #c0392b;  /* Màu đậm hơn khi hover */
+}
+
+/* Điều chỉnh phần icon trong thanh điều hướng */
+.rightOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Thêm khoảng cách đều giữa các icon */
+}
+
+/* Icon chung */
+.iconLink {
+  position: relative;
+  font-size: 20px;  /* Điều chỉnh kích thước icon */
+  color: #333;  /* Màu của icon */
+  transition: transform 0.3s ease;  /* Thêm hiệu ứng khi hover */
+}
+
+/* Hiệu ứng khi hover vào icon */
+.iconLink:hover {
+  transform: scale(1.1);  /* Phóng to icon khi hover */
+  color: #0076d6;  /* Đổi màu icon khi hover */
+}
+
+/* Hiệu ứng khi icon được click */
+.iconLink:active {
+  transform: scale(1.1);  /* Phóng to icon khi click */
+  color: #005bb5;  /* Màu icon khi click */
+}
+
+/* Điều chỉnh vị trí số thông báo trên icon */
+.badge {
+  position: absolute;
+  top: -5px;  /* Căn chỉnh vị trí số cho cân đối hơn */
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 16px;  /* Tăng kích thước vòng tròn để chứa số */
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;  /* Giảm kích thước số cho phù hợp */
+  font-weight: 400;  /* Tăng độ đậm để số dễ đọc */
+  line-height: 1;  /* Giảm khoảng cách giữa các dòng của số */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);  /* Thêm đổ bóng để tạo chiều sâu */
+  padding: 2px;  /* Thêm chút padding để số không quá sát viền */
+}
+
+/* Phần thông báo chạy chữ */
+/* Phần thông báo chạy chữ */
+.Header__announcement {
+  background-color: #2f456b;  /* Màu xanh lam hiện đại */
+  color: rgb(252, 251, 251);  /* Màu chữ đen đậm */
+  font-size: 18px;  /* Kích thước chữ lớn hơn */
+  font-weight: 200;  /* Độ đậm của chữ */
+  font-family: 'Times New Roman', Times, serif;  /* Phông chữ Times New Roman */
+  padding: 10px 0;  /* Chỉnh lại padding để tạo không gian cho chữ */
+  white-space: nowrap;  /* Không ngắt dòng */
+  overflow: hidden;  /* Ẩn phần chữ khi vượt quá khung */
+  position: relative;  /* Để phần chữ di chuyển trong khung */
+  height: 20px;  /* Đảm bảo đủ chiều cao để chữ không bị khuất */
+  display: flex;
+  align-items: center;  /* Căn giữa chữ theo chiều dọc */
+}
+
+.Header__announcement span {
+  display: inline-block;
+  white-space: nowrap;  /* Giữ cho dòng chữ không bị ngắt xuống dòng */
+  animation: scrollText 20s linear infinite;  /* Animation chạy mượt mà trong 15 giây */
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;  /* Phông chữ Times New Roman cho phần chữ chạy */
+}
+
+/* Định nghĩa animation cho chữ chạy từ phải sang trái */
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);  /* Bắt đầu ngoài khung nhìn */
+  }
+  100% {
+    transform: translateX(-100%);  /* Kết thúc ngoài khung nhìn phía bên trái */
+  }
+}

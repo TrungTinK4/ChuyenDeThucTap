@@ -1,0 +1,428 @@
+/* Reset CSS để loại bỏ margin và padding mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến kích thước tổng thể */
+}
+
+/* Bố cục tổng thể */
+.dashboard {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f9; /* Màu nền nhẹ */
+}
+
+/* Menu Sidebar */
+.sidebar {
+  width: 20%; /* Độ rộng của sidebar (menu) */
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  height: 100vh; /* Chiều cao toàn màn hình */
+  box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ để tách biệt menu */
+  transition: width 0.3s; /* Hiệu ứng khi thu gọn */
+}
+
+/* Hiệu ứng khi hover vào sidebar */
+.sidebar:hover {
+  width: 250px; /* Chiều rộng khi hover */
+}
+
+/* Thay đổi độ rộng của sidebar khi mở */
+.sidebar.open {
+  width: 250px; /* Chiều rộng khi mở */
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 1rem 0;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #2c3e50;
+}
+
+/* Dashboard hiển thị ô vuông */
+.dashboardContainer {
+  width: 80%; /* Phần dashboard chiếm phần còn lại */
+  padding: 2rem;
+  overflow-y: auto; /* Cuộn dọc nếu nội dung vượt quá chiều cao */
+}
+
+/* Tiêu đề của Dashboard */
+.dashboardContainer > h1 {
+  color: rgba(0, 0, 0, 0.733);
+  font: 300 2rem "Roboto";
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Dashboard Summary (ô vuông) */
+.dashboardSummaryBox2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.dashboardCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 23%; /* Điều chỉnh độ rộng */
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboardCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.cardContent p {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+.cardContent h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+}
+
+.cardIcon {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Icon màu cho từng ô */
+.dashboardCard .fa-wallet {
+  color: #2c3e50;
+}
+
+.dashboardCard .fa-box {
+  color: #2196F3;
+}
+
+.dashboardCard .fa-shopping-cart {
+  color: #FF9800;
+}
+
+.dashboardCard .fa-users {
+  color: #9C27B0;
+}
+
+.dashboardCard .fa-exclamation-circle {
+  color: #F44336;
+}
+
+/* Responsive CSS cho màn hình nhỏ */
+@media (max-width: 1024px) {
+  .dashboardCard {
+    width: 45%; /* Điều chỉnh để 2 ô trên một hàng cho màn hình nhỏ hơn */
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardCard {
+    width: 100%; /* Hiển thị 1 ô trên mỗi hàng cho thiết bị di động */
+  }
+}
+
+.chartButtons {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.chartButtons button {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.chartButtons button:hover {
+  background-color: #2c3e50;
+}
+
+.colorButtons {
+  margin-top: 20px;
+}
+
+.colorButtons button {
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Cấu hình CSS cho chế độ sáng và tối */
+.light-mode {
+  background-color: #f4f4f9; /* Màu nền sáng */
+  color: black; /* Màu chữ sáng */
+}
+
+.dark-mode {
+  background-color: #333; /* Màu nền tối */
+  color: white; /* Màu chữ tối */
+}
+
+/* Nút chuyển đổi chế độ sáng/tối */
+.toggleThemeButton {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggleThemeButton:hover {
+  background-color: #2c3e50;
+}
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem; /* Khoảng cách dưới tiêu đề */
+}
+
+.dashboardOptions {
+  display: flex;
+  gap: 1rem; /* Khoảng cách giữa các tùy chọn */
+}
+
+.dashboardOption {
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50; /* Màu nền cho các tùy chọn */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; /* Không có gạch chân */
+  transition: background-color 0.3s;
+}
+
+.dashboardOption:hover {
+  background-color: #2c3e50; /* Màu nền khi hover */
+}
+/* Reset CSS để loại bỏ margin và padding mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến kích thước tổng thể */
+}
+
+/* Bố cục tổng thể */
+.dashboard {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f9; /* Màu nền nhẹ */
+}
+
+/* Menu Sidebar */
+.sidebar {
+  width: 20%; /* Độ rộng của sidebar (menu) */
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  height: 100vh; /* Chiều cao toàn màn hình */
+  box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ để tách biệt menu */
+  transition: width 0.3s; /* Hiệu ứng khi thu gọn */
+}
+
+/* Hiệu ứng khi hover vào sidebar */
+.sidebar:hover {
+  width: 250px; /* Chiều rộng khi hover */
+}
+
+/* Thay đổi độ rộng của sidebar khi mở */
+.sidebar.open {
+  width: 250px; /* Chiều rộng khi mở */
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 1rem 0;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #3BB77E;
+}
+
+/* Dashboard hiển thị ô vuông */
+.dashboardContainer {
+  width: 80%; /* Phần dashboard chiếm phần còn lại */
+  padding: 2rem;
+  overflow-y: auto; /* Cuộn dọc nếu nội dung vượt quá chiều cao */
+}
+
+/* Tiêu đề của Dashboard */
+.dashboardContainer > h1 {
+  color: rgba(0, 0, 0, 0.733);
+  font: 300 2rem "Roboto";
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Dashboard Summary (ô vuông) */
+.dashboardSummaryBox2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.dashboardCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 23%; /* Điều chỉnh độ rộng */
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboardCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.cardContent p {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+.cardContent h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+}
+
+.cardIcon {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Icon màu cho từng ô */
+.dashboardCard .fa-wallet {
+  color: #2c3e50;
+}
+
+.dashboardCard .fa-box {
+  color: #2196F3;
+}
+
+.dashboardCard .fa-shopping-cart {
+  color: #FF9800;
+}
+
+.dashboardCard .fa-users {
+  color: #9C27B0;
+}
+
+.dashboardCard .fa-exclamation-circle {
+  color: #F44336;
+}
+
+/* Responsive CSS cho màn hình nhỏ */
+@media (max-width: 1024px) {
+  .dashboardCard {
+    width: 45%; /* Điều chỉnh để 2 ô trên một hàng cho màn hình nhỏ hơn */
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardCard {
+    width: 100%; /* Hiển thị 1 ô trên mỗi hàng cho thiết bị di động */
+  }
+}
+
+.chartButtons {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.chartButtons button {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.chartButtons button:hover {
+  background-color: #2c3e50;
+}
+
+.colorButtons {
+  margin-top: 20px;
+}
+
+.colorButtons button {
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Cấu hình CSS cho chế độ sáng và tối */
+.light-mode {
+  background-color: #f4f4f9; /* Màu nền sáng */
+  color: black; /* Màu chữ sáng */
+}
+
+.dark-mode {
+  background-color: #333; /* Màu nền tối */
+  color: white; /* Màu chữ tối */
+}
+
+/* Nút chuyển đổi chế độ sáng/tối */
+.toggleThemeButton {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggleThemeButton:hover {
+  background-color: #2c3e50;
+}
+
+/* Các class và thuộc tính khác đã có ở đây */

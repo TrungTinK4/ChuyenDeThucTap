@@ -1,0 +1,122 @@
+.footer-container {
+  background-color: #2f456b;  /* Màu nền xanh đậm */
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif; /* Cập nhật font chữ để chuyên nghiệp hơn */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px; /* Tăng khoảng cách giữa các cột */
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px; /* Tăng khoảng cách giữa các section */
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
+}
+
+.newsletter h4,
+.social-media h4,
+.footer-section h4 {
+  margin-bottom: 20px;
+  font-size: 20px;  /* Tăng kích thước tiêu đề */
+  text-transform: uppercase; /* Viết hoa các tiêu đề */
+  font-weight: 600; /* Đậm hơn cho tiêu đề */
+}
+
+.newsletter input {
+  padding: 12px;
+  margin-right: 10px;
+  width: 250px; /* Mở rộng kích thước input cho thoáng */
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.newsletter button {
+  padding: 12px 25px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Thêm hiệu ứng hover */
+}
+
+.newsletter button:hover {
+  background-color: #007bff; /* Đổi màu nút khi hover */
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px; /* Tăng khoảng cách giữa các biểu tượng mạng xã hội */
+}
+
+.social-icons a {
+  color: white;
+  font-size: 26px; /* Tăng kích thước biểu tượng */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+  font-size: 16px; /* Tăng kích thước font chữ */
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.payment-methods i {
+  font-size: 26px;
+  margin-right: 20px;
+  color: white;
+}
+
+.certifications img {
+  width: 110px;
+  margin-right: 20px;
+}
+
+.payment-methods,
+.certifications {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Khoảng cách giữa các phương thức thanh toán và chứng nhận */
+}
